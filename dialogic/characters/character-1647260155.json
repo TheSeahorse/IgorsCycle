@@ -1,0 +1,20 @@
+{
+	"color": "#ff262414",
+	"description": "",
+	"display_name": "",
+	"display_name_bool": false,
+	"id": "character-1647260155.json",
+	"mirror_portraits": true,
+	"name": "ant",
+	"nickname": "",
+	"nickname_bool": false,
+	"offset_x": 0,
+	"offset_y": 0,
+	"portraits": [
+		{
+			"name": "Default",
+			"path": "res://Resources/ant.png"
+		}
+	],
+	"scale": 100
+}

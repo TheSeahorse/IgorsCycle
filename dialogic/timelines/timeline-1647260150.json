@@ -1,0 +1,77 @@
+{
+	"events": [
+		{
+			"action": "join",
+			"character": "character-1647260155.json",
+			"event_id": "dialogic_002",
+			"mirror": false,
+			"portrait": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": true
+			}
+		},
+		{
+			"character": "character-1647260155.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "This is a little game"
+		},
+		{
+			"action": "join",
+			"character": "character-1647250751.json",
+			"event_id": "dialogic_002",
+			"mirror": false,
+			"portrait": "",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			}
+		},
+		{
+			"character": "character-1647250751.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "A very smol game indeed"
+		},
+		{
+			"character": "character-1647260155.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "A miniscule game"
+		},
+		{
+			"character": "character-1647250751.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "A microscopic game you could say"
+		},
+		{
+			"character": "character-1647260155.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "You could even say it's a game for ants"
+		},
+		{
+			"character": "character-1647250751.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "..."
+		},
+		{
+			"event_id": "dialogic_022",
+			"transition_duration": 1
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.3",
+		"file": "timeline-1647260150.json",
+		"name": "ant_1"
+	}
+}

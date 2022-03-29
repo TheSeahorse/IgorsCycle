@@ -1,0 +1,135 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
+[ext_resource path="res://Resources/cycle_wheel.png" type="Texture" id=2]
+[ext_resource path="res://Resources/cycle_frame.png" type="Texture" id=3]
+[ext_resource path="res://Resources/squidward.png" type="Texture" id=4]
+[ext_resource path="res://Resources/blood.png" type="Texture" id=5]
+[ext_resource path="res://Resources/E.png" type="Texture" id=6]
+
+[sub_resource type="PhysicsMaterial" id=5]
+friction = 0.5
+bounce = 0.2
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 20.0
+
+[sub_resource type="PhysicsMaterial" id=3]
+friction = 0.5
+bounce = 0.2
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 20.0
+
+[sub_resource type="PhysicsMaterial" id=4]
+rough = true
+
+[sub_resource type="CircleShape2D" id=6]
+radius = 29.0172
+
+[node name="Player" type="RigidBody2D"]
+z_index = 1
+collision_layer = 17
+collision_mask = 39
+mass = 2.0
+gravity_scale = 2.0
+contacts_reported = 1
+contact_monitor = true
+script = ExtResource( 1 )
+
+[node name="BackWheel" type="RigidBody2D" parent="."]
+position = Vector2( -50, 0 )
+collision_mask = 34
+mass = 5.0
+physics_material_override = SubResource( 5 )
+gravity_scale = 2.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BackWheel"]
+shape = SubResource( 1 )
+
+[node name="PinJointBack" type="PinJoint2D" parent="BackWheel"]
+node_a = NodePath("..")
+node_b = NodePath("../../Body")
+
+[node name="Sprite" type="Sprite" parent="BackWheel"]
+scale = Vector2( 0.119591, 0.119591 )
+texture = ExtResource( 2 )
+
+[node name="FrontWheel" type="RigidBody2D" parent="."]
+position = Vector2( 50, 0 )
+collision_mask = 34
+mass = 5.0
+physics_material_override = SubResource( 3 )
+gravity_scale = 2.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FrontWheel"]
+shape = SubResource( 2 )
+
+[node name="PinJointFront" type="PinJoint2D" parent="FrontWheel"]
+node_a = NodePath("..")
+node_b = NodePath("../../Body")
+
+[node name="Sprite" type="Sprite" parent="FrontWheel"]
+scale = Vector2( 0.119591, 0.119591 )
+texture = ExtResource( 2 )
+
+[node name="Body" type="RigidBody2D" parent="."]
+collision_mask = 34
+mass = 10.0
+physics_material_override = SubResource( 4 )
+gravity_scale = 2.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Body"]
+polygon = PoolVector2Array( -49, 2, -22, -39, 30, -39, 48, 1, 52, 1, 33, -44, -24, -44, -54, 2 )
+
+[node name="Sprite" type="Sprite" parent="Body"]
+position = Vector2( -2.5, -29.5 )
+scale = Vector2( 0.305483, 0.286207 )
+texture = ExtResource( 3 )
+
+[node name="PinJointPlayer" type="PinJoint2D" parent="."]
+visible = false
+position = Vector2( -24, -44 )
+node_a = NodePath("..")
+node_b = NodePath("../Body")
+disable_collision = false
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
+position = Vector2( -28, -63 )
+rotation = -0.218166
+polygon = PoolVector2Array( -9.76759, -11.3839, -8.01289, 26.9034, -0.207162, 19.4154, 10.5321, 21.7962, 6.93534, -12.8024, 4.97811, -22.4548, -1.63952, -24.9462, -7.6032, -21.1469 )
+
+[node name="Igor" type="Sprite" parent="CollisionShape2D"]
+position = Vector2( -0.423607, 20.3917 )
+scale = Vector2( 0.0601415, 0.0601415 )
+texture = ExtResource( 4 )
+
+[node name="Blood" type="Sprite" parent="CollisionShape2D"]
+visible = false
+position = Vector2( -0.538757, 7.05051 )
+rotation = -1.57385
+scale = Vector2( 0.133827, 0.133827 )
+texture = ExtResource( 5 )
+
+[node name="DeathTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="E" type="Sprite" parent="."]
+visible = false
+position = Vector2( 24, -76 )
+scale = Vector2( 0.098473, 0.098473 )
+texture = ExtResource( 6 )
+
+[node name="DialogDetector" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 12
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DialogDetector"]
+position = Vector2( -27, -61 )
+shape = SubResource( 6 )
+
+[connection signal="body_entered" from="." to="." method="_on_Player_body_entered"]
+[connection signal="timeout" from="DeathTimer" to="." method="_on_DeathTimer_timeout"]
+[connection signal="area_entered" from="DialogDetector" to="." method="_on_DialogDetector_area_entered"]
+[connection signal="area_exited" from="DialogDetector" to="." method="_on_DialogDetector_area_exited"]

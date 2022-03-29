@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Resources/lemahmod.png" type="Texture" id=1]
+[ext_resource path="res://Resources/UI/Ubuntu-Bold.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 611.052
+
+[sub_resource type="DynamicFont" id=2]
+size = 258
+outline_size = 4
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[node name="LeMahmod" type="Area2D"]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -4, -1242 )
+shape = SubResource( 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( -367, -88, -509, -172, -509, -538, -435, -542, -435, -744, 373, -744, 427, -690, 430, -552, 470, -512, 470, -189, 383, -101, -11, 27, -1, 242, 292, 686, 238, 686, -17, 282, -236, 689, -276, 669, -31, 239, -38, 37 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+flip_h = true
+
+[node name="Label" type="Label" parent="."]
+margin_left = -706.0
+margin_top = -1093.0
+margin_right = 717.0
+margin_bottom = -803.0
+custom_colors/font_color = Color( 0.368627, 0.960784, 0.180392, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "LeMahmod"
+__meta__ = {
+"_edit_use_anchors_": false
+}

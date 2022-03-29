@@ -1,0 +1,125 @@
+{
+	"events": [
+		{
+			"action": "join",
+			"character": "character-1647250710.json",
+			"event_id": "dialogic_002",
+			"mirror": false,
+			"portrait": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": true
+			}
+		},
+		{
+			"action": "join",
+			"character": "character-1647250751.json",
+			"event_id": "dialogic_002",
+			"mirror": false,
+			"portrait": "",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			}
+		},
+		{
+			"character": "character-1647250710.json",
+			"event_id": "dialogic_010",
+			"options": [
+
+			],
+			"portrait": "",
+			"question": "wat yuo want? me egsplain mor? "
+		},
+		{
+			"choice": "Yes",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "character-1647250710.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "mov left weel wit [color=#FF0000]W/A/S/D[/color] one clic = one impuls"
+		},
+		{
+			"character": "character-1647250710.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "mov rigt weel wit [color=#FF0000]I/J/K/L[/color] one clic = one impuls"
+		},
+		{
+			"character": "character-1647250710.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "retart levl wit [color=#FF0000]R[/color]"
+		},
+		{
+			"character": "character-1647250710.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "talk pepel wit [color=#FF0000]E[/color]"
+		},
+		{
+			"character": "character-1647250710.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "stop play wit [color=#FF0000]Esc[/color]"
+		},
+		{
+			"character": "character-1647250710.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "carful head, gruond go boom, many blod"
+		},
+		{
+			"character": "character-1647250751.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "That still doesn't explain what I'm supposed to do here"
+		},
+		{
+			"character": "character-1647250710.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "ok me egslplain all goot lack "
+		},
+		{
+			"emit_signal": "okayeg_increment",
+			"event_id": "dialogic_040"
+		},
+		{
+			"choice": "No",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "character-1647250710.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "ok goot lack"
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"event_id": "dialogic_022",
+			"transition_duration": 1
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.3",
+		"file": "timeline-1647254598.json",
+		"name": "okayeg_2"
+	}
+}

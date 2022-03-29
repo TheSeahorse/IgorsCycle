@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Resources/seahorse.png" type="Texture" id=1]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 711.011
+
+[node name="Seahorse" type="Area2D"]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -1025, -12 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( -347, 441, -357, 282, -368, 110, -350, -50, -309, -189, -248, -251, -129, -306, -173, -360, -186, -449, -155, -523, -95, -571, -22, -585, 57, -551, 100, -494, 113, -425, 89, -340, 105, -305, 291, -211, 311, -152, 305, -88, 323, -39, 325, 45, 356, 120, 349, 363, 363, 472, 339, 528, 212, 596, -262, 588, -264, 493, -330, 497 )

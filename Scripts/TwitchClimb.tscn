@@ -1,0 +1,390 @@
+[gd_scene load_steps=38 format=2]
+
+[ext_resource path="res://Scripts/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/TwitchClimb.gd" type="Script" id=2]
+[ext_resource path="res://Resources/tower_background.jpeg" type="Texture" id=3]
+[ext_resource path="res://Resources/road.png" type="Texture" id=4]
+[ext_resource path="res://Resources/UI/Ubuntu-Bold.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://Resources/viewers.png" type="Texture" id=6]
+[ext_resource path="res://Scripts/Seahorse.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scripts/LeMahmod.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scripts/FabrorBarbro.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Resources/professorcar.png" type="Texture" id=10]
+[ext_resource path="res://Resources/ledge.png" type="Texture" id=11]
+[ext_resource path="res://Scripts/Velcuz.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Resources/airballon_back.png" type="Texture" id=13]
+[ext_resource path="res://Resources/airballon_front.png" type="Texture" id=14]
+[ext_resource path="res://Resources/concrete.jpg" type="Texture" id=15]
+[ext_resource path="res://Resources/russianplane.png" type="Texture" id=16]
+[ext_resource path="res://Resources/halfpipe.png" type="Texture" id=17]
+[ext_resource path="res://Scripts/NymN.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Scripts/Vadikus.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Scripts/Zoil.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Scripts/Erobb.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Resources/cardback.png" type="Texture" id=22]
+[ext_resource path="res://Scripts/Kripparrian.tscn" type="PackedScene" id=23]
+[ext_resource path="res://Resources/wallbounce.png" type="Texture" id=24]
+[ext_resource path="res://Resources/icicles.png" type="Texture" id=25]
+[ext_resource path="res://Resources/coffin.png" type="Texture" id=26]
+[ext_resource path="res://Scripts/Hobo.tscn" type="PackedScene" id=27]
+[ext_resource path="res://Resources/horse.png" type="Texture" id=28]
+[ext_resource path="res://Resources/TriHard.png" type="Texture" id=29]
+[ext_resource path="res://Scripts/Soda.tscn" type="PackedScene" id=30]
+[ext_resource path="res://Resources/stairs.png" type="Texture" id=31]
+[ext_resource path="res://Scripts/xQc.tscn" type="PackedScene" id=32]
+[ext_resource path="res://Scripts/Wesker.tscn" type="PackedScene" id=33]
+[ext_resource path="res://Scripts/Angelatchy.tscn" type="PackedScene" id=34]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 1521.5, 17.5 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 64
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 5 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 87, 2059 )
+
+[node name="TwitchClimb" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="TowerBackground" type="Sprite" parent="."]
+position = Vector2( 1341, -2030 )
+scale = Vector2( 2.723, 2.723 )
+texture = ExtResource( 3 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1242, -3076 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2( 0.6, 0.6 )
+limit_left = 0
+limit_top = -4070
+limit_right = 2700
+limit_bottom = 0
+
+[node name="Angelatchy" parent="." instance=ExtResource( 34 )]
+position = Vector2( 2348, -108 )
+scale = Vector2( 0.6, 0.6 )
+
+[node name="Ground" type="StaticBody2D" parent="."]
+position = Vector2( 1365, -30 )
+collision_layer = 2
+collision_mask = 2
+
+[node name="Sprite" type="Sprite" parent="Ground"]
+scale = Vector2( 6, 1 )
+texture = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+position = Vector2( -52.5, -7.5 )
+shape = SubResource( 1 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Sprite" type="Sprite" parent="CanvasLayer"]
+position = Vector2( 39, 40 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 6 )
+
+[node name="Viewers" type="Label" parent="CanvasLayer"]
+margin_left = 85.0
+margin_top = 2.0
+margin_right = 229.0
+margin_bottom = 75.0
+custom_colors/font_color = Color( 0.968627, 0.34902, 0.345098, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "2376"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Wall" type="StaticBody2D" parent="."]
+position = Vector2( -8, 0 )
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall"]
+position = Vector2( -80, -2067 )
+shape = SubResource( 3 )
+
+[node name="Wall2" type="StaticBody2D" parent="."]
+position = Vector2( 2869, 12 )
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall2"]
+position = Vector2( -80, -2067 )
+shape = SubResource( 3 )
+
+[node name="Seahorse" parent="." instance=ExtResource( 7 )]
+position = Vector2( 754, -119 )
+scale = Vector2( 0.12, 0.12 )
+
+[node name="TriHard" type="Sprite" parent="."]
+position = Vector2( 2652, -1941 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 29 )
+
+[node name="LeMahmod" parent="." instance=ExtResource( 8 )]
+position = Vector2( 986, -112 )
+scale = Vector2( 0.1, 0.1 )
+
+[node name="FabrorBarbro" parent="." instance=ExtResource( 9 )]
+position = Vector2( 1186, -118 )
+scale = Vector2( 0.23, 0.23 )
+
+[node name="ProfessorCar" type="StaticBody2D" parent="."]
+position = Vector2( -71, 1 )
+collision_layer = 2
+collision_mask = 2
+
+[node name="Sprite" type="Sprite" parent="ProfessorCar"]
+position = Vector2( 1806, -144 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 10 )
+flip_h = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ProfessorCar"]
+polygon = PoolVector2Array( 1552, -56, 1544, -66, 1524, -68, 1533, -125, 1565, -139, 1591, -159, 1665, -179, 1689, -182, 1719, -230, 1746, -240, 1792, -250, 1846, -253, 1896, -254, 1912, -247, 1949, -231, 1993, -200, 2025, -171, 2032, -166, 2045, -167, 2045, -158, 2046, -150, 2058, -119, 2075, -94, 2068, -87, 2069, -81, 2089, -82, 2088, -76, 2065, -71, 2050, -78, 2021, -85, 2009, -58, 1990, -36, 1940, -41, 1575, -36 )
+
+[node name="Velcuz" parent="." instance=ExtResource( 12 )]
+position = Vector2( 2627, -477 )
+scale = Vector2( 0.1, 0.1 )
+
+[node name="Ledge" type="StaticBody2D" parent="."]
+position = Vector2( 2485, -249 )
+collision_layer = 2
+collision_mask = 2
+
+[node name="Sprite" type="Sprite" parent="Ledge"]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 11 )
+flip_h = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ledge"]
+polygon = PoolVector2Array( -197, -152, 221, -144, 219, 153, -85, 153, -90, 68, -139, 69, -143, -23, -207, -22, -216, -135 )
+
+[node name="Zoil" parent="." instance=ExtResource( 20 )]
+position = Vector2( 1833, -1139 )
+scale = Vector2( 0.15, 0.15 )
+
+[node name="AirBalloon" type="StaticBody2D" parent="."]
+position = Vector2( 1702, -779 )
+collision_layer = 2
+collision_mask = 2
+
+[node name="Back" type="Sprite" parent="AirBalloon"]
+rotation = 0.174533
+texture = ExtResource( 13 )
+flip_h = true
+
+[node name="Front" type="Sprite" parent="AirBalloon"]
+rotation = 0.174533
+z_index = 10
+texture = ExtResource( 14 )
+flip_h = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="AirBalloon"]
+polygon = PoolVector2Array( 28, 20, 49, 27, 52, 6, 52, -10, 91, -47, 173, -128, 194, -167, 198, -210, 187, -239, 163, -269, 135, -284, 40, -300, -2, -292, -41, -263, -59, -223, -51, -161, 11, -56, 35, -10 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="AirBalloon"]
+polygon = PoolVector2Array( -218, 146, -184, 166, -112, 198, -38, 220, 64, 240, 176, 252, 203, 254, 188, 263, 138, 259, 13, 240, -59, 224, -152, 196, -210, 169, -241, 149 )
+
+[node name="Erobb" parent="." instance=ExtResource( 21 )]
+position = Vector2( 2352, -1711 )
+rotation = -1.74533
+scale = Vector2( 0.12, 0.12 )
+
+[node name="Halfpipe" type="StaticBody2D" parent="."]
+position = Vector2( 2505, -1552 )
+rotation = -1.43117
+scale = Vector2( 0.460503, 0.460503 )
+collision_layer = 2
+collision_mask = 2
+
+[node name="Sprite" type="Sprite" parent="Halfpipe"]
+texture = ExtResource( 17 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Halfpipe"]
+polygon = PoolVector2Array( -695.731, -207.032, -686.339, -15.3779, -621.536, 118.051, -538.217, 211.6, -401.067, 266.883, -257.095, 292.699, -84.7603, 270.672, 66.8142, 194.548, 156.062, 111.833, 195.99, -25.3516, 226.781, -196.338, 1086.83, -536.498, 1088.83, -335.033, 1023.79, -95.6411, 959.603, 40.5664, 699.451, 327.117, 350.505, 496.767, -655.605, 515.365, -955.313, 99.1743 )
+
+[node name="NymN" parent="." instance=ExtResource( 18 )]
+position = Vector2( 2339, -1308 )
+scale = Vector2( 0.1, 0.1 )
+
+[node name="Concrete" type="StaticBody2D" parent="."]
+position = Vector2( 2704, -1152 )
+rotation = 0.0872665
+collision_layer = 2
+collision_mask = 2
+
+[node name="Sprite" type="Sprite" parent="Concrete"]
+position = Vector2( -0.374512, 138.568 )
+scale = Vector2( 1, 0.6 )
+texture = ExtResource( 15 )
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Concrete"]
+polygon = PoolVector2Array( -523.15, -70.6735, 523.899, -69.927, 520.221, 346.98, -525.658, 348.139 )
+
+[node name="Concrete2" type="StaticBody2D" parent="."]
+position = Vector2( 2753, -3394 )
+rotation = 0.0872665
+scale = Vector2( 1, 0.1 )
+collision_layer = 2
+collision_mask = 2
+
+[node name="Sprite" type="Sprite" parent="Concrete2"]
+position = Vector2( -0.374512, 138.568 )
+scale = Vector2( 1, 0.6 )
+texture = ExtResource( 15 )
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Concrete2"]
+polygon = PoolVector2Array( -523.15, -70.6735, 523.899, -69.927, 520.221, 346.98, -525.658, 348.139 )
+
+[node name="Concrete3" type="StaticBody2D" parent="."]
+position = Vector2( -104, -4071 )
+rotation = 0.0872665
+scale = Vector2( 1, 0.1 )
+collision_layer = 2
+collision_mask = 2
+
+[node name="Sprite" type="Sprite" parent="Concrete3"]
+position = Vector2( -0.374512, 138.568 )
+scale = Vector2( 1, 0.6 )
+texture = ExtResource( 15 )
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Concrete3"]
+polygon = PoolVector2Array( -523.15, -70.6735, 523.899, -69.927, 520.221, 346.98, -525.658, 348.139 )
+
+[node name="Plane" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="Sprite" type="Sprite" parent="Plane"]
+position = Vector2( 265, -950 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 16 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Plane"]
+polygon = PoolVector2Array( -37, -1011, 110, -942, 205, -952, 213, -966, 252, -967, 256, -957, 334, -967, 339, -973, 352, -970, 492, -990, 526, -982, 550, -970, 698, -945, 640, -918, 580, -910, 471, -900, 403, -882, 345, -877, 352, -868, 331, -855, 195, -846, 160, -853, 93, -847, 81, -838, -16, -841 )
+
+[node name="Vadikus" parent="." instance=ExtResource( 19 )]
+position = Vector2( 141, -1007 )
+scale = Vector2( 0.25, 0.25 )
+
+[node name="Kripparrian" parent="." instance=ExtResource( 23 )]
+position = Vector2( 1339, -1799 )
+rotation = 0.243491
+scale = Vector2( 0.3, 0.3 )
+
+[node name="CardBack" type="StaticBody2D" parent="."]
+position = Vector2( 1243, -1673 )
+collision_layer = 2
+collision_mask = 2
+
+[node name="Sprite" type="Sprite" parent="CardBack"]
+rotation = -1.3248
+scale = Vector2( 0.3, 0.6 )
+texture = ExtResource( 22 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CardBack"]
+polygon = PoolVector2Array( -257, -168, 297, -28, 308, -20, 312, -16, 309, -3, 269, 159, 262, 163, 241, 163, -307, 28, -310, 23, -311, 14, -267, -163 )
+
+[node name="WallBounce" type="StaticBody2D" parent="."]
+position = Vector2( -10, -1990 )
+rotation = -0.0634514
+collision_layer = 2
+collision_mask = 2
+
+[node name="Sprite" type="Sprite" parent="WallBounce"]
+texture = ExtResource( 24 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="WallBounce"]
+polygon = PoolVector2Array( -2, 444, 117, 403, 195, 350, 265, 265, 299, 172, 301, -500, -164, -501, -145, 465 )
+
+[node name="Icicles" type="StaticBody2D" parent="."]
+position = Vector2( 278, -2486 )
+scale = Vector2( 1.5, 1.2 )
+collision_layer = 2
+collision_mask = 2
+
+[node name="Sprite" type="Sprite" parent="Icicles"]
+texture = ExtResource( 25 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Icicles"]
+polygon = PoolVector2Array( -222, -185, -222, -103, -167, 138, -152, -10, -120, 137, -101, -13, -74, 185, -72, -3, -55, 125, -46, -28, -33, 79, -19, -28, -14, 134, -5, 92, 4, 135, 11, 116, 23, 147, 45, 55, 60, 119, 68, 37, 83, 6, 94, 89, 124, -44, 136, -27, 142, -49, 146, -29, 152, -67, 173, -20, 178, -66, 189, -39, 222, -186 )
+
+[node name="Icicles2" type="StaticBody2D" parent="."]
+position = Vector2( 278, -2936 )
+rotation = 3.14159
+scale = Vector2( 1.5, 1.2 )
+collision_layer = 2
+collision_mask = 2
+
+[node name="Sprite" type="Sprite" parent="Icicles2"]
+texture = ExtResource( 25 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Icicles2"]
+polygon = PoolVector2Array( -222, -185, -222, -103, -167, 138, -152, -10, -120, 137, -101, -13, -74, 185, -72, -3, -55, 125, -46, -28, -33, 79, -19, -28, -14, 134, -5, 92, 4, 135, 11, 116, 23, 147, 45, 55, 60, 119, 68, 37, 83, 6, 94, 89, 124, -44, 136, -27, 142, -49, 146, -29, 152, -67, 173, -20, 178, -66, 189, -39, 222, -186 )
+
+[node name="Coffin" type="StaticBody2D" parent="."]
+position = Vector2( 1198, -2199 )
+scale = Vector2( 1.5, 1.2 )
+collision_layer = 2
+collision_mask = 2
+
+[node name="Sprite" type="Sprite" parent="Coffin"]
+position = Vector2( -0.679199, -2.34546 )
+rotation = 0.0401426
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 26 )
+flip_h = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Coffin"]
+polygon = PoolVector2Array( -178.667, -11.6663, -141.333, -22.4996, -139.333, -28.3329, -136, -24.9996, -15.3335, -54.9996, -12.0002, -58.3329, -7.3335, -55.8329, 66.6664, -74.1663, 102, -77.4996, 105.333, -84.1663, 107.333, -77.4996, 140.666, -81.6663, 182, -63.3329, 179.333, -10.8329, 114.666, 22.5004, -141.333, 75.8337, -168.667, 58.3337 )
+
+[node name="Horse" type="StaticBody2D" parent="."]
+position = Vector2( 1894, -2327 )
+rotation = -0.546288
+scale = Vector2( 1.5, 1.2 )
+collision_layer = 2
+collision_mask = 2
+
+[node name="Sprite" type="Sprite" parent="Horse"]
+scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 28 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Horse"]
+polygon = PoolVector2Array( -194.667, 36.6666, -189.333, 22.5, -156.667, -11.6666, -138.667, -43.3333, -126, -55.8333, -90.6666, -69.1666, -54, -81.6666, -36, -80, 30.6666, -70, 76.6666, -84.1666, 100, -98.3333, 120.667, -111.667, 140.667, -118.333, 168.667, -111.667, 175.333, -119.167, 177.333, -111.667, 180, -106.667, 194.667, -110, 184, -103.333, 184.667, -95, 176, -40, 166.667, -35, 155.333, -37.5, 151.333, -66.6666, 122.667, -56.6666, 118, -45.8333, 120, -33.3333, 114, -10, 107.333, -1.66663, 119.333, 15.8334, 133.333, 30, 138, 57.5, 139.333, 74.1666, 128, 99.1666, 122.667, 83.3334, 128.667, 80, 79.3334, 25.8334, 76.6666, 112.5, 62, 111.667, 59.3334, 44.1666, -54, 27.5, -66, 64.1666, -50.6666, 112.5, -62, 114.167, -76.6666, 67.5, -99.3334, 83.3334, -100, 119.167, -108, 118.333, -110.667, 94.1666, -105.333, 57.5, -105.333, 38.3334, -83.3334, 12.5, -85.3334, -5.83337, -90.6666, -18.3334, -94.6666, -38.3333, -94, -60, -104, -55, -115.333, -35, -131.333, -12.5, -170.667, 26.6666, -192, 44.1666 )
+
+[node name="Hobo" parent="." instance=ExtResource( 27 )]
+position = Vector2( 1239, -2318 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Soda" parent="." instance=ExtResource( 30 )]
+position = Vector2( 2386, -2767 )
+scale = Vector2( 0.3, 0.3 )
+
+[node name="Stairs" type="StaticBody2D" parent="."]
+position = Vector2( 955, -3164 )
+collision_layer = 2
+collision_mask = 2
+
+[node name="Sprite" type="Sprite" parent="Stairs"]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 31 )
+flip_h = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Stairs"]
+polygon = PoolVector2Array( 554, 288, 516, 287, 516, 263, 476, 262, 473, 233, 436, 232, 433, 204, 399, 203, 398, 177, 353, 172, 354, 152, 319, 147, 318, 120, 168, 118, 169, 95, 130, 92, 131, 70, 98, 68, 99, 48, 63, 45, 63, 20, 26, 17, 26, -6, -8, -7, -8, -33, -40, -36, -41, -54, -71, -55, -70, -78, -114, -81, -108, -105, -137, -109, -139, -126, -177, -128, -175, -152, -205, -153, -205, -176, -244, -179, -243, -201, -374, -204, -379, -220, -408, -225, -409, -241, -421, -249, -431, -249, -433, -259, -451, -271, -464, -272, -464, -282, -481, -293, -493, -293, -496, -305, -514, -315, -526, -314, -524, -325, -541, -337, -553, -337, -551, -283, -390, -162, -280, -164, 155, 153, 268, 158, 503, 335 )
+
+[node name="xQc" parent="." instance=ExtResource( 32 )]
+position = Vector2( 1225, -3621 )
+scale = Vector2( 0.8, 0.8 )
+
+[node name="Wesker" parent="." instance=ExtResource( 33 )]
+position = Vector2( 2024, -3739 )
+scale = Vector2( 0.5, 0.5 )
